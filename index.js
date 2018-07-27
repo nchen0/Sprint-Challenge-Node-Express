@@ -11,5 +11,8 @@ server.use(express.json());
 server.use("/api/projects", projectRoutes);
 
 // Error Handling
+server.use((req, res) => {
+  res.status(404).send("This route does not exist.");
+});
 
 server.listen(8000, () => console.log("API is running on port 8000"));
