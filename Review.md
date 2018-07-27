@@ -18,7 +18,7 @@ Middleware are functions that get executed in the order they're written
 
 ## What is a Resource?
 
-???
+? Resource is what you find from a get request.
 
 ## What can the API return to help clients know if a request was successful?
 
