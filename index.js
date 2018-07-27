@@ -6,7 +6,9 @@ const actionRoutes = require("./Routes/ActionRoutes");
 
 // Middleware
 const server = express();
+const cors = require("cors");
 server.use(express.json());
+server.use(cors());
 
 // Routing Middleware
 server.use("/api/projects", projectRoutes);

@@ -61,7 +61,7 @@ router.delete("/:id", async (req, res) => {
 
 router.put("/:id", async (req, res) => {
   const { project_id, notes, description, completed } = req.body;
-  if (!project_id || !description || description.length > 128) {
+  if (!project_id || !notes || !description || description.length > 128) {
     res
       .status(400)
       .json({
