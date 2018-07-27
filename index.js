@@ -2,6 +2,7 @@ const express = require("express");
 
 // Routes
 const projectRoutes = require("./Routes/ProjectRoutes");
+const actionRoutes = require("./Routes/ActionRoutes");
 
 // Middleware
 const server = express();
@@ -9,6 +10,7 @@ server.use(express.json());
 
 // Routing Middleware
 server.use("/api/projects", projectRoutes);
+server.use("/api/actions", actionRoutes);
 
 // Error Handling
 server.use((req, res) => {

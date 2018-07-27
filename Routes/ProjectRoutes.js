@@ -76,10 +76,10 @@ router.put("/:id", async (req, res) => {
         const newProject = await projects.get(req.params.id);
         res.status(200).json(newProject);
       } catch (err) {
-        res.status(500).json({ message: "The project could not be modified." });
+        res.status(404).json({ message: "The specific project does not exist." });
       }
     } catch (err) {
-      res.status(404).json({ message: "The specific project does not exist." });
+      res.status(500).json({ message: "The project could not be modified" });
     }
   }
 });
