@@ -84,4 +84,13 @@ router.put("/:id", async (req, res) => {
   }
 });
 
+router.get("/:id/actions", async (req, res) => {
+  try {
+    const actionsList = await projects.getProjectActions(req.params.id);
+    res.status(200).json(actionsList);
+  } catch (err) {
+    res.status(404).json({ message: "The specific project does not exist." });
+  }
+});
+
 module.exports = router;
